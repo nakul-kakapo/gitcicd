@@ -17,6 +17,8 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '11'
+          distribution: 'temurin'
+          architecture: x64
 
       - name: Cache Maven dependencies
         uses: actions/cache@v2
