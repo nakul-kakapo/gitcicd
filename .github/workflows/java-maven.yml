@@ -39,8 +39,9 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
-            cd /path/to/deploy
+            service webclientserver stop
+            cd ../var/unitywebclientserver
             # Copy the built artifacts to your server
-            scp -r target/* user@server:/path/to/deploy
+            scp -r target/* user@server:../var/unitywebclientserver
             # Restart your application (replace with your actual command)
-            systemctl restart your-application-name
+            service webclientserver start
