@@ -44,6 +44,6 @@ jobs:
             service webclientserver stop
             cd ../var/unitywebclientserver
             # Copy the built artifacts to your server
-            scp -r target/* user@server:../var/unitywebclientserver
+            scp -r target/* root@10.20.2.24:../var/unitywebclientserver
             # Restart your application (replace with your actual command)
             service webclientserver start
